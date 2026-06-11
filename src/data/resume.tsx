@@ -47,7 +47,7 @@ export const DATA = {
   description:
     "Full-Stack Software Engineer and CS undergraduate at BITS Pilani building production-grade apps at the intersection of dev, AI, and cybersecurity.",
   summary:
-    "Full-stack software engineer at [BITS Pilani](/#education) (CGPA **8.9/10**) with **3+ shipped production-grade applications** in LLM integration, real-time systems, and cloud-native infrastructure. Merged **5+ PRs** into [kubernetes-sigs/kro](https://github.com/kubernetes-sigs/kro) (CNCF Kubernetes SIG), collaborating with engineers from Google, Microsoft, and AWS. Hackathon finalist — Top 2 of 200+ teams. IIT Guwahati Cyber Security alumnus. [Explore my projects](/#projects).",
+    "Full-stack software engineer and CS undergraduate at [BITS Pilani](/#education) (CGPA **8.9/10**) with **3+ shipped production-grade applications** in LLM integration, real-time systems, and cloud-native infrastructure. Merged **5+ PRs** into [kubernetes-sigs/kro](https://github.com/kubernetes-sigs/kro) (CNCF Kubernetes SIG), collaborating with engineers from Google, Microsoft, and AWS. Hackathon finalist — Top 2 of 200+ teams. IIT Guwahati Cyber Security alumnus. [Explore my projects](/#projects).",
   avatarUrl: "/avatar.png",
   skills: [
     { name: "Python", icon: Python },
