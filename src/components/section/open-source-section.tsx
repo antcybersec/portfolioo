@@ -47,9 +47,12 @@ export default function OpenSourceSection() {
                     href={pr.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 group/pr"
+                    className="flex items-center gap-2 group/pr"
                   >
-                    <GitMerge className="size-3.5 text-green-600 dark:text-green-500 flex-none mt-0.5" />
+                    <span className="inline-flex items-center gap-1 rounded-full bg-purple-600/15 border border-purple-500/30 px-2 py-0.5 text-[10px] font-semibold text-purple-600 dark:text-purple-400 flex-none">
+                      <GitMerge className="size-2.5" />
+                      Merged
+                    </span>
                     <span className="text-sm font-medium group-hover/pr:underline underline-offset-2">
                       {pr.title}
                     </span>
@@ -64,7 +67,7 @@ export default function OpenSourceSection() {
                     </span>
                   </div>
                 </div>
-                <p className="text-xs text-muted-foreground leading-relaxed pl-5">
+                <p className="text-xs text-muted-foreground leading-relaxed pl-0">
                   {pr.description}
                 </p>
               </div>
