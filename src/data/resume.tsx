@@ -122,7 +122,7 @@ export const DATA = {
       school: "BITS Pilani",
       href: "https://www.bits-pilani.ac.in/",
       degree: "B.Sc. in Computer Science — CGPA: 8.9/10",
-      logoUrl: "",
+      logoUrl: "/bits.png",
       icon: GraduationCap,
       start: "2025",
       end: "2029",
@@ -131,7 +131,7 @@ export const DATA = {
       school: "IIT Guwahati",
       href: "https://www.iitg.ac.in/",
       degree: "Post Graduate Programme in Cyber Security",
-      logoUrl: "",
+      logoUrl: "/iitg.png",
       icon: School,
       start: "2024",
       end: "2024",
@@ -248,8 +248,14 @@ export const DATA = {
       location: "India — 2nd Place of 200+ Teams",
       description:
         "Secured 2nd place out of 200+ nationwide participants by delivering a functional Solana blockchain product under a 48-hour deadline. Recognised by Superteam India, the leading Solana builder community.",
-      image: "",
-      links: [],
+      image: "/100x.png",
+      links: [
+        {
+          title: "Submission",
+          href: "https://superteam.fun/earn/feed/submission/1a0891a8-d124-472c-9cbb-a8a28ebe52cf",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
     },
     {
       title: "CTF Competition — IIT Guwahati Cyber Security Programme",
@@ -257,8 +263,63 @@ export const DATA = {
       location: "India — Top 5 of 80+ Participants",
       description:
         "Ranked top 5 out of 80+ participants by cracking advanced challenges in cryptography, network security, and binary exploitation under strict time constraints.",
-      image: "",
+      image: "/iitg.png",
       links: [],
     },
   ] as Hackathon[],
+
+  openSource: [
+    {
+      org: "kubernetes-sigs/kro",
+      orgUrl: "https://github.com/kubernetes-sigs/kro",
+      logoUrl: "",
+      icon: Kubernetes,
+      description:
+        "CNCF Kubernetes SIG project — Kubernetes Resource Orchestrator. Collaborated with engineers from Google, Microsoft, and AWS across 15+ asynchronous code review cycles.",
+      prs: [
+        {
+          title: "feat: implement KREP-10 — cluster-scoped instance CRDs",
+          href: "https://github.com/kubernetes-sigs/kro/pull/1152",
+          number: "#1152",
+          merged: "Mar 17, 2026",
+          description:
+            "Added a scope field (Namespaced|Cluster) to ResourceGraphDefinition.spec.schema, enabling cluster-scoped instance CRDs with full backward compatibility. Touched the API, CRD synthesizer, graph builder, controller, and added integration tests.",
+        },
+        {
+          title: "KREP-10 — design proposal for cluster-scoped instance CRDs",
+          href: "https://github.com/kubernetes-sigs/kro/pull/1030",
+          number: "#1030",
+          merged: "Mar 17, 2026",
+          description:
+            "Authored and landed the KREP design document for cluster-scoped instance CRD support, accepted for the kro 0.9 milestone after review by maintainers including a-hilaly, jakobmoellerdev, and chrisdoherty4.",
+        },
+      ],
+    },
+    {
+      org: "hyperledger/fabric-ca",
+      orgUrl: "https://github.com/hyperledger/fabric-ca",
+      logoUrl: "/lfdt.png",
+      icon: undefined,
+      description:
+        "Linux Foundation Decentralized Trust (LFDT) project — Hyperledger Fabric CA server and client. Contributed Go fixes and dependency modernisation reviewed by Hyperledger maintainers.",
+      prs: [
+        {
+          title: "Fix client command detection when flags precede subcommand",
+          href: "https://github.com/hyperledger/fabric-ca/pull/506",
+          number: "#506",
+          merged: "Jun 7, 2026",
+          description:
+            "Used cobra's Find to resolve the top-level subcommand instead of assuming args[1], fixing incorrect enrollment validation when global flags like --loglevel appear before enroll. Added unit and positive integration tests.",
+        },
+        {
+          title: "Replace archived Knetic/govaluate with casbin/govaluate",
+          href: "https://github.com/hyperledger/fabric-ca/pull/502",
+          number: "#502",
+          merged: "Jun 2, 2026",
+          description:
+            "Swapped the archived LDAP expression-evaluator dependency to the maintained casbin/govaluate fork. No user-facing LDAP syntax or config changes — a zero-risk dependency modernisation.",
+        },
+      ],
+    },
+  ],
 } as const;

@@ -11,6 +11,7 @@ import ProjectsSection from "@/components/section/projects-section";
 import GitHubContributionsSection from "@/components/section/github-contributions-section";
 import WorkSection from "@/components/section/work-section";
 import HackathonsSection from "@/components/section/hackathons-section";
+import OpenSourceSection from "@/components/section/open-source-section";
 import { PronounceMyName } from "@/components/pronounce-my-name";
 import { ArrowUpRight } from "lucide-react";
 
@@ -123,6 +124,22 @@ export default function Page() {
           <ProjectsSection />
         </BlurFade>
       </section>
+      <section id="open-source">
+        <div className="flex min-h-0 flex-col gap-y-6">
+          <BlurFade delay={BLUR_FADE_DELAY * 12}>
+            <div className="flex items-center w-full">
+              <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
+              <div className="border bg-primary z-10 rounded-none px-4 py-1">
+                <span className="text-background text-sm font-medium">Open Source</span>
+              </div>
+              <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 12 + 0.04}>
+            <OpenSourceSection />
+          </BlurFade>
+        </div>
+      </section>
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
@@ -151,12 +168,8 @@ export default function Page() {
                       <img
                         src={education.logoUrl}
                         alt={education.school}
-                        className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+                        className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border overflow-hidden object-contain flex-none bg-muted"
                       />
-                    ) : education.icon ? (
-                      <div className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border bg-muted flex-none flex items-center justify-center">
-                        <education.icon className="size-4 md:size-5 text-muted-foreground" aria-hidden />
-                      </div>
                     ) : (
                       <div className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border bg-muted flex-none" />
                     )}
