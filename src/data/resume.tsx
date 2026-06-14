@@ -42,8 +42,8 @@ export const DATA = {
   namePronunciationUrl: "",
   url: "https://portfolioo-s1az.vercel.app/",
   githubUsername: "antcybersec",
-  location: "Pilani, Rajasthan, India",
-  locationLink: "https://www.google.com/maps/place/BITS+Pilani",
+  location: "Delhi, India",
+  locationLink: "https://www.google.com/maps/place/Delhi,+India",
   description:
     "Full-Stack Software Engineer and CS undergraduate at BITS Pilani building production-grade apps at the intersection of dev, AI, and cybersecurity.",
   summary:
