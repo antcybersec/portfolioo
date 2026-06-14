@@ -40,10 +40,10 @@ export const DATA = {
   name: "Anant Kumar",
   initials: "AK",
   namePronunciationUrl: "",
-  url: "https://portfolioo-s1az.vercel.app/",
+  url: "https://portfolioo-jy3f.vercel.app/",
   githubUsername: "antcybersec",
   location: "Delhi, India",
-  locationLink: "https://www.google.com/maps/place/Delhi,+India",
+  locationLink: "https://www.google.com/maps/place/Delhi",
   description:
     "Full-Stack Software Engineer and CS undergraduate at BITS Pilani building production-grade apps at the intersection of dev, AI, and cybersecurity.",
   summary:
@@ -79,7 +79,7 @@ export const DATA = {
     timeZone: "Asia/Kolkata",
     pronouns: "he/him",
     urls: [
-      "https://portfolioo-s1az.vercel.app/",
+      "https://portfolioo-jy3f.vercel.app/",
       "https://github.com/antcybersec",
     ],
   },
