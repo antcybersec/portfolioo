@@ -227,6 +227,36 @@ export const DATA = {
       image: "/rustcanvas.png",
       video: "",
     },
+    {
+      title: "diskMon — Cross-Platform System Resource Monitor",
+      href: "https://github.com/antcybersec/diskMon",
+      repoUrl: "https://github.com/antcybersec/diskMon",
+      dates: "2026",
+      active: true,
+      description:
+        "High-performance cross-platform system monitor written in Rust. Groups processes into app bundles (30+ workloads like Docker, Ollama, IDEs) with interactive nested treemaps (RAM, CPU, disk I/O), memory pressure anomaly detection, and zero-network privacy.",
+      technologies: [
+        "Rust",
+        "egui",
+        "Systems Programming",
+        "libproc / Mach",
+        "Linux / macOS / Windows",
+      ],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/antcybersec/diskMon",
+          icon: <Icons.github className="size-3" />,
+        },
+        {
+          type: "Releases",
+          href: "https://github.com/antcybersec/diskMon/releases",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/diskmon.png",
+      video: "",
+    },
   ],
 
   hackathons: [
