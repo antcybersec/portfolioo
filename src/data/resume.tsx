@@ -229,7 +229,7 @@ export const DATA = {
     },
     {
       title: "diskMon — Cross-Platform System Resource Monitor",
-      href: "https://github.com/antcybersec/diskMon",
+      href: "https://diskmon.vercel.app/",
       repoUrl: "https://github.com/antcybersec/diskMon",
       dates: "2026",
       active: true,
@@ -249,8 +249,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
         {
-          type: "Releases",
-          href: "https://github.com/antcybersec/diskMon/releases",
+          type: "Website",
+          href: "https://diskmon.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
