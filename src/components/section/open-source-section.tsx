@@ -4,9 +4,40 @@ import { ArrowUpRight, GitMerge } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 
+const OPEN_SOURCE_METRICS = [
+  { label: "CNCF Merged PRs", count: "35+", highlight: true },
+  { label: "Kubernetes Core", count: "13" },
+  { label: "Kubeflow (Hub/MCP)", count: "9" },
+  { label: "Argo CD GitOps", count: "3" },
+  { label: "kro (KREP-10)", count: "5" },
+];
+
 export default function OpenSourceSection() {
   return (
     <div className="flex min-h-0 flex-col gap-y-8">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
+        {OPEN_SOURCE_METRICS.map((metric) => (
+          <div
+            key={metric.label}
+            className={`border p-2.5 flex flex-col justify-between transition-colors ${
+              metric.highlight
+                ? "bg-purple-500/10 border-purple-500/30 text-purple-700 dark:text-purple-300"
+                : "bg-muted/40 border-border text-foreground"
+            }`}
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight">
+                {metric.count}
+              </span>
+              {metric.highlight && <GitMerge className="size-3.5 text-purple-500" />}
+            </div>
+            <span className="text-[11px] text-muted-foreground leading-tight mt-1 font-mono">
+              {metric.label}
+            </span>
+          </div>
+        ))}
+      </div>
+
       {DATA.openSource.map((org) => (
         <div key={org.org} className="flex flex-col gap-y-4">
           <Link

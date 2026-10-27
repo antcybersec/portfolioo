@@ -183,11 +183,13 @@ export default function Page() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
-                    <span>
-                      {education.start} - {education.end}
-                    </span>
-                  </div>
+                  {education.start ? (
+                    <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
+                      <span>
+                        {education.start} {education.end ? `- ${education.end}` : ""}
+                      </span>
+                    </div>
+                  ) : null}
                 </Link>
               </BlurFade>
             ))}

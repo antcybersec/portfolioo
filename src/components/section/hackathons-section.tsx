@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import { DATA } from "@/data/resume";
 import { Timeline, TimelineItem, TimelineConnectItem } from "@/components/timeline";
+import { Award } from "lucide-react";
 
 export default function HackathonsSection() {
   return (
@@ -12,16 +13,14 @@ export default function HackathonsSection() {
           <div className="flex items-center w-full">
             <div className="flex-1 h-px bg-linear-to-r from-transparent from-5% via-border via-95% to-transparent" />
             <div className="border bg-primary z-10 rounded-none px-4 py-1">
-              <span className="text-background text-sm font-medium">Hackathons</span>
+              <span className="text-background text-sm font-medium">Achievements & Awards</span>
             </div>
             <div className="flex-1 h-px bg-linear-to-l from-transparent from-5% via-border via-95% to-transparent" />
           </div>
           <div className="flex flex-col gap-y-3 items-center justify-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">I like building things</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Proven Competitive Track Record</h2>
             <p className="text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed text-balance text-center">
-              During my time in university, I attended {DATA.hackathons.length}+
-              hackathons. People from around the country would come together and
-              build incredible things in 2-3 days. It was eye-opening to see the endless possibilities brought to life by a group of motivated and passionate individuals.
+              Securing podium finishes in nationwide builder hackathons and top rankings in cybersecurity CTFs under strict time constraints.
             </p>
           </div>
         </div>
@@ -40,15 +39,25 @@ export default function HackathonsSection() {
                 )}
               </TimelineConnectItem>
               <div className="flex flex-1 flex-col justify-start gap-2 min-w-0">
-                {hackathon.dates && (
-                  <time className="text-xs text-muted-foreground">{hackathon.dates}</time>
-                )}
-                {hackathon.title && (
-                  <h3 className="font-semibold leading-none">{hackathon.title}</h3>
-                )}
-                {hackathon.location && (
-                  <p className="text-sm text-muted-foreground">{hackathon.location}</p>
-                )}
+                <div className="flex flex-wrap items-center gap-2">
+                  {hackathon.dates && (
+                    <time className="text-xs text-muted-foreground">{hackathon.dates}</time>
+                  )}
+                  {hackathon.location && (
+                    <span className="text-xs text-muted-foreground">· {hackathon.location}</span>
+                  )}
+                </div>
+                <div className="flex flex-wrap items-center gap-2">
+                  {hackathon.title && (
+                    <h3 className="font-semibold leading-tight">{hackathon.title}</h3>
+                  )}
+                  {hackathon.awardBadge && (
+                    <Badge variant="outline" className="text-[11px] font-semibold bg-primary/5 text-primary border-primary/30 rounded-none px-2 py-0.5 inline-flex items-center gap-1">
+                      <Award className="size-3" />
+                      {hackathon.awardBadge}
+                    </Badge>
+                  )}
+                </div>
                 {hackathon.description && (
                   <p className="text-sm text-muted-foreground leading-relaxed wrap-break-word">
                     {hackathon.description}
