@@ -322,12 +322,12 @@ export const DATA = {
             "Fixed a concurrent data race in client-go reflector state, improving stability across high-throughput informer watches.",
         },
         {
-          title: "Fix race condition in NoExecuteTaintManager pod eviction",
-          href: "https://github.com/kubernetes/kubernetes/pull/140198",
-          number: "#140198",
-          merged: "Sep 2026",
+          title: "kubelet: honor serverCertificateKeyAlgorithm for serving cert",
+          href: "https://github.com/kubernetes/kubernetes/pull/142434",
+          number: "#142434",
+          merged: "Oct 2026",
           description:
-            "Diagnosed and resolved premature pod eviction caused by race conditions in NoExecuteTaintManager after 3 maintainer review rounds.",
+            "Configured kubelet to honor serverCertificateKeyAlgorithm during self-signed serving cert generation, enabling modern key algorithms (ECDSA-P256, RSA, ML-DSA).",
         },
         {
           title: "Fix ServiceAccount storage correctness in apiserver",
