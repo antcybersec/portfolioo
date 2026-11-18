@@ -129,47 +129,53 @@ export function ProjectCard({
           </div>
         )}
       </div>
-      <div className="p-4 flex flex-col gap-2 flex-1 min-h-0">
-        <div className="flex items-start justify-between gap-2">
-          <div className="flex flex-col gap-0.5">
-            <h3 className="font-semibold text-sm">{title}</h3>
-            <time className="text-xs text-muted-foreground">{dates}</time>
+      <div className="p-3.5 sm:p-4 flex flex-col gap-2 flex-1 min-h-0">
+        <div className="flex flex-col gap-1.5">
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-semibold text-sm leading-snug">{title}</h3>
+            <time className="text-xs text-muted-foreground shrink-0">{dates}</time>
           </div>
-          <a
-            href={href || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0"
-            aria-label={`Open live ${title}`}
-          >
-            <Button
-              type="button"
-              variant="outline"
-              size="sm"
-              className="h-7 gap-1.5 rounded-none text-xs font-medium bg-muted/50 hover:bg-muted"
-            >
-              <ExternalLink className="h-3 w-3" aria-hidden />
-              Live
-            </Button>
-          </a>
+          <div className="flex items-center gap-1.5 pt-0.5">
+            {href && (
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0"
+                aria-label={`Open live ${title}`}
+              >
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-6 sm:h-7 px-2 sm:px-2.5 gap-1.5 rounded-none text-xs font-medium bg-muted/50 hover:bg-muted"
+                >
+                  <ExternalLink className="h-3 w-3" aria-hidden />
+                  Live
+                </Button>
+              </a>
+            )}
+            {repoUrl && (
+              <a
+                href={repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0"
+                aria-label={`Open repo for ${title}`}
+              >
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-6 sm:h-7 px-2 sm:px-2.5 gap-1.5 rounded-none text-xs font-medium border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary"
+                >
+                  <ExternalLink className="h-3 w-3" aria-hidden />
+                  Repo
+                </Button>
+              </a>
+            )}
+          </div>
         </div>
-        <a
-          href={repoUrl || "#"}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-fit"
-          aria-label={`Open repo for ${title}`}
-        >
-          <Button
-            type="button"
-            variant="outline"
-            size="sm"
-            className="h-7 gap-1.5 rounded-none text-xs font-medium border-primary/50 text-foreground hover:bg-primary/10 hover:border-primary"
-          >
-            <ExternalLink className="h-3 w-3" aria-hidden />
-            Repo
-          </Button>
-        </a>
         <div className="text-xs flex-1 min-h-0 prose prose-p:my-0.5 max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert line-clamp-3">
           <Markdown>{description}</Markdown>
         </div>

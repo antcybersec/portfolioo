@@ -42,52 +42,54 @@ export function GitHubContributionGraph({
   }
 
   return (
-    <ContributionGraph
-      className="mx-auto py-2"
-      data={contributions}
-      blockSize={11}
-      blockMargin={3}
-      blockRadius={0}
-    >
-      <ContributionGraphCalendar className="px-2" title="GitHub Contributions">
-        {({ activity, dayIndex, weekIndex }) => {
-          const count = Number(activity?.count ?? 0);
-          const dateLabel = formatDateLabel(activity?.date ?? "");
-          const titleText = `${count} contribution${count === 1 ? "" : "s"} on ${dateLabel}`;
-          return (
-          <g>
-            <title>{titleText}</title>
-            <ContributionGraphBlock
-              activity={activity}
-              dayIndex={dayIndex}
-              weekIndex={weekIndex}
-            />
-          </g>
-          );
-        }}
-      </ContributionGraphCalendar>
+    <div className="w-full overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+      <ContributionGraph
+        className="mx-auto py-2 min-w-fit"
+        data={contributions}
+        blockSize={11}
+        blockMargin={3}
+        blockRadius={0}
+      >
+        <ContributionGraphCalendar className="px-2" title="GitHub Contributions">
+          {({ activity, dayIndex, weekIndex }) => {
+            const count = Number(activity?.count ?? 0);
+            const dateLabel = formatDateLabel(activity?.date ?? "");
+            const titleText = `${count} contribution${count === 1 ? "" : "s"} on ${dateLabel}`;
+            return (
+            <g>
+              <title>{titleText}</title>
+              <ContributionGraphBlock
+                activity={activity}
+                dayIndex={dayIndex}
+                weekIndex={weekIndex}
+              />
+            </g>
+            );
+          }}
+        </ContributionGraphCalendar>
 
-      <ContributionGraphFooter className="px-2">
-        <ContributionGraphTotalCount>
-          {({ totalCount, year }) => (
-            <div className="text-muted-foreground">
-              {totalCount.toLocaleString("en")} contributions in {year} on{" "}
-              <a
-                className="font-medium underline underline-offset-4"
-                href={`https://github.com/${DATA.githubUsername}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub
-              </a>
-              .
-            </div>
-          )}
-        </ContributionGraphTotalCount>
+        <ContributionGraphFooter className="px-2">
+          <ContributionGraphTotalCount>
+            {({ totalCount, year }) => (
+              <div className="text-muted-foreground">
+                {totalCount.toLocaleString("en")} contributions in {year} on{" "}
+                <a
+                  className="font-medium underline underline-offset-4"
+                  href={`https://github.com/${DATA.githubUsername}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                .
+              </div>
+            )}
+          </ContributionGraphTotalCount>
 
-        <ContributionGraphLegend />
-      </ContributionGraphFooter>
-    </ContributionGraph>
+          <ContributionGraphLegend />
+        </ContributionGraphFooter>
+      </ContributionGraph>
+    </div>
   );
 }
 

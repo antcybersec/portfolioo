@@ -64,8 +64,8 @@ export function Timeline({
     <div
       data-orientation={orientation}
       className={cn(
-        "group relative [--timeline-gap:2rem]",
-        orientation === "vertical" && "flex flex-col gap-4 p-4 w-full",
+        "group relative [--timeline-gap:1.5rem] sm:[--timeline-gap:2rem]",
+        orientation === "vertical" && "flex flex-col gap-4 p-1 sm:p-4 w-full",
         orientation === "horizontal" && "flex flex-row gap-4 p-4 h-full",
         className
       )}

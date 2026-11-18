@@ -61,7 +61,7 @@ function OverviewLink({
   return (
     <div
       className={cn(
-        "flex items-center gap-3 font-mono text-sm text-muted-foreground",
+        "flex items-center gap-3 font-mono text-sm text-muted-foreground min-w-0",
         className
       )}
     >
@@ -75,7 +75,7 @@ function OverviewLink({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="underline-offset-4 hover:underline hover:text-foreground transition-colors"
+        className="underline-offset-4 hover:underline hover:text-foreground transition-colors truncate break-all sm:break-normal min-w-0"
         aria-label={label}
       >
         {children}

@@ -26,20 +26,20 @@ export default function HackathonsSection() {
         </div>
         <Timeline>
           {DATA.hackathons.map((hackathon) => (
-            <TimelineItem key={hackathon.title + hackathon.dates} className="w-full flex items-start justify-between gap-10">
+            <TimelineItem key={hackathon.title + hackathon.dates} className="w-full flex items-start justify-between gap-3.5 sm:gap-6 md:gap-8">
               <TimelineConnectItem className="flex items-start justify-center">
                 {hackathon.image ? (
                   <img
                     src={hackathon.image}
                     alt={hackathon.title}
-                    className="size-10 bg-card z-10 shrink-0 overflow-hidden p-1 border rounded-none shadow ring-2 ring-border object-contain flex-none"
+                    className="size-8 sm:size-10 bg-card z-10 shrink-0 overflow-hidden p-1 border rounded-none shadow ring-2 ring-border object-contain flex-none"
                   />
                 ) : (
-                  <div className="size-10 bg-card z-10 shrink-0 overflow-hidden p-1 border rounded-none shadow ring-2 ring-border flex-none" />
+                  <div className="size-8 sm:size-10 bg-card z-10 shrink-0 overflow-hidden p-1 border rounded-none shadow ring-2 ring-border flex-none" />
                 )}
               </TimelineConnectItem>
               <div className="flex flex-1 flex-col justify-start gap-2 min-w-0">
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                   {hackathon.dates && (
                     <time className="text-xs text-muted-foreground">{hackathon.dates}</time>
                   )}
@@ -49,17 +49,17 @@ export default function HackathonsSection() {
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
                   {hackathon.title && (
-                    <h3 className="font-semibold leading-tight">{hackathon.title}</h3>
+                    <h3 className="font-semibold leading-tight text-sm sm:text-base">{hackathon.title}</h3>
                   )}
                   {hackathon.awardBadge && (
-                    <Badge variant="outline" className="text-[11px] font-semibold bg-primary/5 text-primary border-primary/30 rounded-none px-2 py-0.5 inline-flex items-center gap-1">
+                    <Badge variant="outline" className="text-[10px] sm:text-[11px] font-semibold bg-primary/5 text-primary border-primary/30 rounded-none px-2 py-0.5 inline-flex items-center gap-1">
                       <Award className="size-3" />
                       {hackathon.awardBadge}
                     </Badge>
                   )}
                 </div>
                 {hackathon.description && (
-                  <p className="text-sm text-muted-foreground leading-relaxed wrap-break-word">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed break-words">
                     {hackathon.description}
                   </p>
                 )}

@@ -46,13 +46,14 @@ export const DATA = {
   location: "Delhi, India",
   locationLink: "https://www.google.com/maps/place/Delhi",
   description:
-    "Distributed Systems & Cloud-Native Engineer. 35+ merged PRs across Kubernetes, Kubeflow, Argo CD & CNCF projects. CS undergraduate at BITS Pilani (CGPA 8.9/10).",
+    "Distributed Systems, Systems & Cloud-Native Engineer. 139+ merged PRs across Kubernetes, Meshery, Argo CD, OpenAirInterface 5G & CNCF projects. CS undergraduate at BITS Pilani (CGPA 8.9/10).",
   summary:
-    "CS undergraduate at [BITS Pilani](/#education) (CGPA **8.9/10**) with **35+ merged PRs** across CNCF and cloud-native ecosystems: **13 merged PRs** in [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes), **9 merged PRs** in [Kubeflow](https://github.com/kubeflow/hub), **3 merged PRs** in [Argo CD](https://github.com/argoproj/argo-cd), and **5 merged PRs** in CNCF [kubernetes-sigs/kro](https://github.com/kubernetes-sigs/kro) including feature design-and-implementation (KREP-10). Experienced in distributed systems, controller-runtime reconciliation logic, and production Go/Rust backend services. [Explore my projects](/#projects).",
+    "CS undergraduate at [BITS Pilani](/#education) (CGPA **8.9/10**) with **139+ merged PRs** across global infrastructure: **18 merged PRs** in [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes), **24 merged PRs** in [Meshery](https://github.com/meshery/meshery), **14 merged PRs** in [OpenAirInterface 5G](https://github.com/duranta-project/openairinterface5g), **11 merged PRs** in [Argo CD](https://github.com/argoproj/argo-cd), **12 merged PRs** in [Kubeflow](https://github.com/kubeflow/hub), **14 merged PRs** in [ProjectDiscovery](https://github.com/projectdiscovery), **6 merged PRs** in [SeaweedFS](https://github.com/seaweedfs/seaweedfs), **4 merged PRs** in [LLVM libc++](https://github.com/llvm/llvm-project), and **5 merged PRs** in CNCF [kubernetes-sigs/kro](https://github.com/kubernetes-sigs/kro) including feature design-and-implementation (KREP-10). Experienced in distributed systems, controller-runtime reconciliation logic, SIMD vectorization, and production Go/Rust/C++ services. [Explore my projects](/#projects).",
   avatarUrl: "/avatar.png",
   skills: [
     { name: "Go", icon: Golang },
     { name: "Rust", icon: undefined },
+    { name: "C / C++", icon: undefined },
     { name: "TypeScript", icon: Typescript },
     { name: "JavaScript", icon: Icons.javascript },
     { name: "Python", icon: Python },
@@ -60,8 +61,12 @@ export const DATA = {
     { name: "Bash", icon: undefined },
     { name: "Kubernetes", icon: Kubernetes },
     { name: "client-go / CRDs", icon: undefined },
+    { name: "Meshery", icon: undefined },
     { name: "Argo CD", icon: undefined },
     { name: "Kubeflow", icon: undefined },
+    { name: "OpenAirInterface 5G", icon: undefined },
+    { name: "LLVM libc++", icon: undefined },
+    { name: "SeaweedFS", icon: undefined },
     { name: "WebSockets", icon: undefined },
     { name: "Redis", icon: undefined },
     { name: "React", icon: ReactLight },
@@ -78,6 +83,7 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/cv.pdf", icon: FileText, label: "CV" },
     { href: "/resume.pdf", icon: FileText, label: "Resume" },
   ],
   overview: {
@@ -290,20 +296,62 @@ export const DATA = {
 
   openSource: [
     {
+      org: "meshery/meshery",
+      orgUrl: "https://github.com/meshery/meshery",
+      logoUrl: "",
+      icon: Kubernetes,
+      description:
+        "24 merged PRs in Meshery cloud native management plane: server nil-guards, MeshSync handlers, UUID validation, and UI state management.",
+      prs: [
+        {
+          title: "Guard nil provider and nil logger in performance profile handlers",
+          href: "https://github.com/meshery/meshery/pull/23772",
+          number: "#23772",
+          merged: "Nov 2026",
+          description:
+            "Hardened performance profile HTTP handlers against nil-pointer dereferences.",
+        },
+        {
+          title: "Guard nil provider, persister, and logger across MeshSync handlers",
+          href: "https://github.com/meshery/meshery/pull/23770",
+          number: "#23770",
+          merged: "Nov 2026",
+          description:
+            "Guarded MeshSync event and status handlers against uninitialized runtime context panics.",
+        },
+        {
+          title: "Return 404 for missing filters and validate path UUIDs in filter handlers",
+          href: "https://github.com/meshery/meshery/pull/23726",
+          number: "#23726",
+          merged: "Nov 2026",
+          description:
+            "Implemented strict UUID path param validation and RESTful 404 error responses.",
+        },
+      ],
+    },
+    {
       org: "kubernetes/kubernetes",
       orgUrl: "https://github.com/kubernetes/kubernetes",
       logoUrl: "",
       icon: Kubernetes,
       description:
-        "13 merged PRs in core Kubernetes across SIG Node, SIG Scheduling, SIG Auth, and SIG Architecture, fixing client-go races, serving certificates, apiserver storage, and validation.",
+        "18 merged PRs in core Kubernetes across SIG Node, SIG Scheduling, SIG Auth, and SIG Architecture: client-go races, serving certificates, apiserver storage, and validation.",
       prs: [
         {
-          title: "kubelet: honor serverCertificateKeyAlgorithm for self-signed serving cert",
+          title: "scheduler: avoid mutating package-level scheduledPodInfo in test",
+          href: "https://github.com/kubernetes/kubernetes/pull/143132",
+          number: "#143132",
+          merged: "Nov 2026",
+          description:
+            "Eliminated race condition from shared package-level test state mutation in scheduler tests.",
+        },
+        {
+          title: "kubelet: honor serverCertificateKeyAlgorithm for serving cert",
           href: "https://github.com/kubernetes/kubernetes/pull/142434",
           number: "#142434",
           merged: "Oct 2026",
           description:
-            "Implemented Kubelet serving certificate algorithm selection supporting modern cryptographic standards.",
+            "Configured kubelet to honor serverCertificateKeyAlgorithm during self-signed serving cert generation (ECDSA-P256, RSA, ML-DSA).",
         },
         {
           title: "client-go/util/cert: let callers choose self-signed key algorithm",
@@ -320,14 +368,6 @@ export const DATA = {
           merged: "Sep 2026",
           description:
             "Fixed a concurrent data race in client-go reflector state, improving stability across high-throughput informer watches.",
-        },
-        {
-          title: "kubelet: honor serverCertificateKeyAlgorithm for serving cert",
-          href: "https://github.com/kubernetes/kubernetes/pull/142434",
-          number: "#142434",
-          merged: "Oct 2026",
-          description:
-            "Configured kubelet to honor serverCertificateKeyAlgorithm during self-signed serving cert generation, enabling modern key algorithms (ECDSA-P256, RSA, ML-DSA).",
         },
         {
           title: "Fix ServiceAccount storage correctness in apiserver",
@@ -348,28 +388,62 @@ export const DATA = {
       ],
     },
     {
+      org: "duranta-project/openairinterface5g",
+      orgUrl: "https://github.com/duranta-project/openairinterface5g",
+      logoUrl: "",
+      icon: undefined,
+      description:
+        "14 merged PRs in 3GPP 5G NR RAN Stack (C/C++): SIMD vectorization without AVX2, NAS/F1AP/NGAP decoders, and integer overflow mitigations.",
+      prs: [
+        {
+          title: "PHY: use 128-bit vectors in mult_complex_vectors() without AVX2",
+          href: "https://github.com/duranta-project/openairinterface5g/pull/1085",
+          number: "#1085",
+          merged: "Nov 2026",
+          description:
+            "Implemented 128-bit SIMD vector routines accelerating complex vector multiplication on non-AVX2 architectures.",
+        },
+        {
+          title: "NGAP, S1AP: fix signed shift overflow in node ID from hostname",
+          href: "https://github.com/duranta-project/openairinterface5g/pull/1045",
+          number: "#1045",
+          merged: "Nov 2026",
+          description:
+            "Resolved undefined behavior in gNB node ID bitshifts derived from hostnames across NGAP/S1AP.",
+        },
+        {
+          title: "nrPolar: use 128-bit vectors in decoder without AVX2",
+          href: "https://github.com/duranta-project/openairinterface5g/pull/992",
+          number: "#992",
+          merged: "Nov 2026",
+          description:
+            "Optimized 5G NR polar channel decoder kernels with 128-bit vectorization.",
+        },
+      ],
+    },
+    {
       org: "argoproj/argo-cd",
       orgUrl: "https://github.com/argoproj/argo-cd",
       logoUrl: "",
       icon: Kubernetes,
       description:
-        "3 merged PRs in Argo CD GitOps controller, apiserver health endpoints, and config-management plugins.",
+        "11 merged PRs in Argo CD GitOps controller, unauthenticated gRPC health probes, Vault health checks, and CMP plugin servers.",
       prs: [
+        {
+          title: "feat(health): add health check for Vault Secrets Operator VaultStaticSecret",
+          href: "https://github.com/argoproj/argo-cd/pull/30574",
+          number: "#30574",
+          merged: "Oct 2026",
+          description:
+            "Authored native health assessment check evaluating VaultStaticSecret CRD readiness.",
+        },
         {
           title: "fix(server): allow gRPC health check without authentication",
           href: "https://github.com/argoproj/argo-cd/pull/30474",
           number: "#30474",
           merged: "Oct 2026",
           description:
-            "Enabled standard unauthenticated gRPC health probe check on Argo CD server endpoints.",
-        },
-        {
-          title: "fix(health): report inactive Crossplane MRDs as Healthy",
-          href: "https://github.com/argoproj/argo-cd/pull/30404",
-          number: "#30404",
-          merged: "Oct 2026",
-          description:
-            "Corrected health assessment evaluation logic for inactive Crossplane ManagedResourceDefinitions.",
+            "Enabled standard unauthenticated gRPC health probe check on Argo CD server endpoints (cherry-picked for 3.3).",
         },
         {
           title: "test(cmpserver): fix flaky timing assertions in RunCommand timeout tests",
@@ -387,8 +461,16 @@ export const DATA = {
       logoUrl: "",
       icon: Kubernetes,
       description:
-        "9 merged PRs across Kubeflow Hub and MCP server: OCI layer packaging, backend error handling, and event pipelines.",
+        "12 merged PRs across Kubeflow Hub and MCP server: OCI layer packaging, model artifact resolution, and event pipelines.",
       prs: [
+        {
+          title: "fix(csi): pick the model artifact when a version has other artifacts",
+          href: "https://github.com/kubeflow/hub/pull/3421",
+          number: "#3421",
+          merged: "Oct 2026",
+          description:
+            "Fixed model artifact resolution when multiple distinct artifacts are encapsulated in a single version.",
+        },
         {
           title: "fix(async-upload): keep base image layout out of model layers",
           href: "https://github.com/kubeflow/hub/pull/3411",
@@ -398,14 +480,6 @@ export const DATA = {
             "Isolated base image layers during async OCI packaging to prevent image layer bloat and pollution.",
         },
         {
-          title: "fix(python): scrub OCI backend errors that are not CalledProcessError",
-          href: "https://github.com/kubeflow/hub/pull/3413",
-          number: "#3413",
-          merged: "Oct 2026",
-          description:
-            "Enhanced Python SDK exception handling for non-zero process errors in OCI backend operations.",
-        },
-        {
           title: "fix(python): decode JWT payloads as base64url",
           href: "https://github.com/kubeflow/hub/pull/3400",
           number: "#3400",
@@ -413,13 +487,83 @@ export const DATA = {
           description:
             "Fixed JWT payload parsing by properly implementing RFC 7515 base64url decoding.",
         },
+      ],
+    },
+    {
+      org: "llvm/llvm-project",
+      orgUrl: "https://github.com/llvm/llvm-project",
+      logoUrl: "",
+      icon: undefined,
+      description:
+        "4 merged PRs in LLVM libc++ standard library implementation of ISO C++ defect reports.",
+      prs: [
         {
-          title: "fix(trainer): keep most recent events when limiting get_training_events",
-          href: "https://github.com/kubeflow/mcp-server/pull/439",
-          number: "#439",
+          title: "[libc++] Implement LWG4188: ostream::sentry destructor exception handling",
+          href: "https://github.com/llvm/llvm-project/pull/241194",
+          number: "#241194",
+          merged: "Nov 2026",
+          description:
+            "Guaranteed no unhandled exceptions escape during output stream synchronization in std::basic_ostream::sentry.",
+        },
+        {
+          title: "[libc++] Mark LWG4269 as Complete and test unique_copy argument order",
+          href: "https://github.com/llvm/llvm-project/pull/239085",
+          number: "#239085",
           merged: "Oct 2026",
           description:
-            "Ensured proper temporal ordering when limiting training event output in Kubeflow MCP server.",
+            "Added test validation verifying operand evaluation order in std::unique_copy.",
+        },
+      ],
+    },
+    {
+      org: "seaweedfs/seaweedfs",
+      orgUrl: "https://github.com/seaweedfs/seaweedfs",
+      logoUrl: "",
+      icon: undefined,
+      description:
+        "6 merged PRs in SeaweedFS distributed scale-out storage: S3 circuit breakers and FUSE mount safety.",
+      prs: [
+        {
+          title: "shell: fix s3.circuitBreaker help examples and error messages",
+          href: "https://github.com/seaweedfs/seaweedfs/pull/12657",
+          number: "#12657",
+          merged: "Nov 2026",
+          description:
+            "Implemented and validated shell command arguments and configuration handlers for S3 circuit breakers.",
+        },
+        {
+          title: "mount: fail the write when swap file chunk cannot be created",
+          href: "https://github.com/seaweedfs/seaweedfs/pull/12655",
+          number: "#12655",
+          merged: "Oct 2026",
+          description:
+            "Prevented silent data corruption in FUSE mounts by propagating write failures on unallocated swap chunks.",
+        },
+      ],
+    },
+    {
+      org: "projectdiscovery",
+      orgUrl: "https://github.com/projectdiscovery",
+      logoUrl: "",
+      icon: undefined,
+      description:
+        "14 merged PRs in offensive security tooling (httpx, nuclei, interactsh, dsl, subfinder, naabu).",
+      prs: [
+        {
+          title: "fix(headless): serialize screenshot network event handlers in httpx",
+          href: "https://github.com/projectdiscovery/httpx/pull/2723",
+          number: "#2723",
+          merged: "Nov 2026",
+          description:
+            "Eliminated concurrency race conditions during headless Chrome DOM snapshots under high probe throughput.",
+        },
+        {
+          title: "fix(dns): record query type of every DNS interaction in interactsh",
+          href: "https://github.com/projectdiscovery/interactsh/pull/1504",
+          number: "#1504",
+          merged: "Oct 2026",
+          description:
+            "Enhanced out-of-band correlation telemetry by logging granular DNS query types for every callback.",
         },
       ],
     },

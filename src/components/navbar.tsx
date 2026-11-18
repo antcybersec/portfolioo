@@ -56,7 +56,7 @@ export default function Navbar() {
     >
       <Dock
         className={cn(
-          "z-50 relative h-14 p-2 w-fit mx-auto flex gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5",
+          "z-50 relative h-14 p-1.5 sm:p-2 w-fit max-w-[calc(100vw-1.5rem)] mx-auto flex gap-1.5 sm:gap-2 border bg-card/90 backdrop-blur-3xl shadow-[0_0_10px_3px] shadow-primary/5",
           visible ? "pointer-events-auto" : "pointer-events-none"
         )}
       >
