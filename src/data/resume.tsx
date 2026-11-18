@@ -292,6 +292,14 @@ export const DATA = {
       image: "/iitg.png",
       links: [],
     },
+    {
+      title: "Summer of Bitcoin Developer Challenge",
+      dates: "2026",
+      location: "Global",
+      description:
+        "Built Chain Lens, a Bitcoin transaction and block analyzer with an interactive CLI and a web interface.",
+      links: [],
+    },
   ] as Hackathon[],
 
   openSource: [
@@ -628,20 +636,36 @@ export const DATA = {
       ],
     },
     {
-      org: "kube-rs / Hyperledger",
+      org: "kube-rs / KubeVirt / Hyperledger",
       orgUrl: "https://github.com/kube-rs/kube",
       logoUrl: "/logos/kube-rs.png",
       icon: undefined,
       description:
-        "Rust and Go cloud/security ecosystems. 4 merged PRs across kube-rs, Hyperledger Fabric-CA, and Hyperledger Identus.",
+        "Rust, Go and cloud/security ecosystems. Merged PRs across kube-rs, KubeVirt, Hyperledger Fabric-CA, and Hyperledger Identus.",
       prs: [
         {
           title: "Add no_spec attribute for CRDs without top-level spec in kube-rs",
-          href: "https://github.com/kube-rs/kube",
-          number: "kube-rs",
+          href: "https://github.com/kube-rs/kube/pull/2071",
+          number: "#2071",
           merged: "2026",
           description:
             "Added no_spec derive attribute for CustomResourceDefinition synthesis in Rust.",
+        },
+        {
+          title: "Unify stream controller trigger runtime bounds in kube-rs",
+          href: "https://github.com/kube-rs/kube/pull/2076",
+          number: "#2076",
+          merged: "2026",
+          description:
+            "Unified runtime trait bounds across kube-rs stream controller triggers.",
+        },
+        {
+          title: "Verify anti-affinity pod spreading for KubeVirt infra deployments",
+          href: "https://github.com/kubevirt/kubevirt/pull/19685",
+          number: "#19685",
+          merged: "2026",
+          description:
+            "Added verification that KubeVirt infrastructure deployments spread pods via anti-affinity.",
         },
         {
           title: "Fix client command flag parsing in Hyperledger Fabric-CA",
