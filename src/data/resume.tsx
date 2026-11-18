@@ -298,8 +298,8 @@ export const DATA = {
     {
       org: "meshery/meshery",
       orgUrl: "https://github.com/meshery/meshery",
-      logoUrl: "",
-      icon: Kubernetes,
+      logoUrl: "/logos/meshery.png",
+      icon: undefined,
       description:
         "24 merged PRs in Meshery cloud native management plane: server nil-guards, MeshSync handlers, UUID validation, and UI state management.",
       prs: [
@@ -332,8 +332,8 @@ export const DATA = {
     {
       org: "kubernetes/kubernetes",
       orgUrl: "https://github.com/kubernetes/kubernetes",
-      logoUrl: "",
-      icon: Kubernetes,
+      logoUrl: "/logos/kubernetes.png",
+      icon: undefined,
       description:
         "18 merged PRs in core Kubernetes across SIG Node, SIG Scheduling, SIG Auth, and SIG Architecture: client-go races, serving certificates, apiserver storage, and validation.",
       prs: [
@@ -390,7 +390,7 @@ export const DATA = {
     {
       org: "duranta-project/openairinterface5g",
       orgUrl: "https://github.com/duranta-project/openairinterface5g",
-      logoUrl: "",
+      logoUrl: "/logos/openairinterface.png",
       icon: undefined,
       description:
         "14 merged PRs in 3GPP 5G NR RAN Stack (C/C++): SIMD vectorization without AVX2, NAS/F1AP/NGAP decoders, and integer overflow mitigations.",
@@ -424,8 +424,8 @@ export const DATA = {
     {
       org: "argoproj/argo-cd",
       orgUrl: "https://github.com/argoproj/argo-cd",
-      logoUrl: "",
-      icon: Kubernetes,
+      logoUrl: "/logos/argocd.png",
+      icon: undefined,
       description:
         "11 merged PRs in Argo CD GitOps controller, unauthenticated gRPC health probes, Vault health checks, and CMP plugin servers.",
       prs: [
@@ -458,8 +458,8 @@ export const DATA = {
     {
       org: "kubeflow",
       orgUrl: "https://github.com/kubeflow/hub",
-      logoUrl: "",
-      icon: Kubernetes,
+      logoUrl: "/logos/kubeflow.png",
+      icon: undefined,
       description:
         "12 merged PRs across Kubeflow Hub and MCP server: OCI layer packaging, model artifact resolution, and event pipelines.",
       prs: [
@@ -492,7 +492,7 @@ export const DATA = {
     {
       org: "llvm/llvm-project",
       orgUrl: "https://github.com/llvm/llvm-project",
-      logoUrl: "",
+      logoUrl: "/logos/llvm.png",
       icon: undefined,
       description:
         "4 merged PRs in LLVM libc++ standard library implementation of ISO C++ defect reports.",
@@ -518,7 +518,7 @@ export const DATA = {
     {
       org: "seaweedfs/seaweedfs",
       orgUrl: "https://github.com/seaweedfs/seaweedfs",
-      logoUrl: "",
+      logoUrl: "/logos/seaweedfs.png",
       icon: undefined,
       description:
         "6 merged PRs in SeaweedFS distributed scale-out storage: S3 circuit breakers and FUSE mount safety.",
@@ -544,7 +544,7 @@ export const DATA = {
     {
       org: "projectdiscovery",
       orgUrl: "https://github.com/projectdiscovery",
-      logoUrl: "",
+      logoUrl: "/logos/projectdiscovery.png",
       icon: undefined,
       description:
         "14 merged PRs in offensive security tooling (httpx, nuclei, interactsh, dsl, subfinder, naabu).",
@@ -570,8 +570,8 @@ export const DATA = {
     {
       org: "kubernetes-sigs/kro",
       orgUrl: "https://github.com/kubernetes-sigs/kro",
-      logoUrl: "",
-      icon: Kubernetes,
+      logoUrl: "/logos/kro.png",
+      icon: undefined,
       description:
         "CNCF Kubernetes SIG project — Kube Resource Orchestrator. 5 merged PRs including end-to-end design and implementation of KREP-10.",
       prs: [
@@ -604,7 +604,7 @@ export const DATA = {
     {
       org: "railgrid/railgrid",
       orgUrl: "https://github.com/railgrid/railgrid",
-      logoUrl: "",
+      logoUrl: "/logos/railgrid.png",
       icon: undefined,
       description:
         "Early-stage AI infrastructure startup. Cold-reached team and shipped 2 merged PRs within days of first contact.",
@@ -630,7 +630,7 @@ export const DATA = {
     {
       org: "kube-rs / Hyperledger",
       orgUrl: "https://github.com/kube-rs/kube",
-      logoUrl: "/lfdt.png",
+      logoUrl: "/logos/kube-rs.png",
       icon: undefined,
       description:
         "Rust and Go cloud/security ecosystems. 4 merged PRs across kube-rs, Hyperledger Fabric-CA, and Hyperledger Identus.",

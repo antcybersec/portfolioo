@@ -46,15 +46,18 @@ export default function OpenSourceSection() {
             rel="noopener noreferrer"
             className="flex items-center gap-x-3 group w-fit"
           >
-            {org.logoUrl ? (
+            {(org as any).logoUrl ? (
               <img
-                src={org.logoUrl}
+                src={(org as any).logoUrl}
                 alt={org.org}
                 className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border overflow-hidden object-contain flex-none bg-muted"
               />
-            ) : org.icon ? (
+            ) : (org as any).icon ? (
               <div className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border bg-muted flex-none flex items-center justify-center">
-                <org.icon className="size-4 md:size-5 text-muted-foreground" />
+                {(() => {
+                  const Icon = (org as any).icon;
+                  return <Icon className="size-4 md:size-5 text-muted-foreground" />;
+                })()}
               </div>
             ) : (
               <div className="size-8 md:size-10 p-1 border rounded-none shadow ring-2 ring-border bg-muted flex-none" />
